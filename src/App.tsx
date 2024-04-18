@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     fetch('https://craft-purse-backend.vercel.app/')
       .then(response => response.text())
-      .then(data => console.log(data))
+      .then(data => setTitle(data))
       .catch(error => { console.log(error) });
   }, [])
 
