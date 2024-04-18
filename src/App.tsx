@@ -1,10 +1,12 @@
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
-  
+  const [title, setTitle] = useState('Loading')
+
   return (
     <>
-      <h1>Amazing</h1>
+      {title}
     </>
   )
 }
