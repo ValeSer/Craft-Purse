@@ -19,7 +19,7 @@ const Material: React.FC = () => {
       <div className='container'>
         <div className='text-container'>
         <button disabled={loading} onClick={clickHandler}> Display Materials </button>
-        <div> {materials[0] && materials[0].name}</div>
+        <div> {materials[0] && materials[0]['name']}</div>
         </div>
       </div>
     </>
