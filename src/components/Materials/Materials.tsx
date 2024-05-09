@@ -1,4 +1,5 @@
 import './Materials.css';
+import Material from '../Material/Material'
 import React, { useState }from 'react';
 
 const Materials: React.FC = () => {
@@ -15,7 +16,7 @@ const Materials: React.FC = () => {
   }
  
   const materialsList = materials.map((material) => {
-    return (<li key={material['_id']}>{material['name']}</li>)
+    return (<Material key={material['_id']} name={material['name']}></Material>)
   })
   return (
     <>
