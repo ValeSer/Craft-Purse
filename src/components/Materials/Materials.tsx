@@ -20,7 +20,7 @@ const Materials: React.FC = () => {
       <Material 
       key={material['_id']}
       name={material['name'] + ': '}
-      quantity={material['quantity']}
+      quantityLeft={material['quantityLeft']}
       ></Material>)
   })
   return (

@@ -1,6 +1,6 @@
 interface MaterialProps {
   name: string;
-  quantity: number;
+  quantityLeft: number;
 
 }
 
@@ -8,7 +8,7 @@ const Material = (props: MaterialProps) => {
 
   return (
     <>
-    <li>{props.name} {props.quantity}</li>
+    <li>{props.name} {props.quantityLeft}</li>
     </>
   )
 }
