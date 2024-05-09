@@ -1,11 +1,11 @@
 import './App.css'
-import Material from './components/Material/Material'
+import Materials from './components/Materials/Materials'
 
 function App() {
   
   return (
     <>
-      <Material/>
+      <Materials/>
     </>
   )
 }

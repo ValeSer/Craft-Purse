@@ -1,7 +1,7 @@
-import './Material.css';
+import './Materials.css';
 import React, { useState }from 'react';
 
-const Material: React.FC = () => {
+const Materials: React.FC = () => {
   const [materials, setMaterials] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -22,7 +22,6 @@ const Material: React.FC = () => {
       <div className='container'>
         <div className='text-container'>
         <button disabled={loading} onClick={clickHandler}> Display Materials </button>
-        {/* <div> {materials[0] && materials[0]['name']}</div> */}
         <ul>
           {materialsList}
         </ul>
@@ -32,4 +31,4 @@ const Material: React.FC = () => {
   )
 }
 
-export default Material;
+export default Materials;
