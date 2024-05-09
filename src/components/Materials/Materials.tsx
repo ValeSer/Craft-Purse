@@ -16,13 +16,18 @@ const Materials: React.FC = () => {
   }
  
   const materialsList = materials.map((material) => {
-    return (<Material key={material['_id']} name={material['name']}></Material>)
+    return (
+      <Material 
+      key={material['_id']}
+      name={material['name'] + ': '}
+      quantity={material['quantity']}
+      ></Material>)
   })
   return (
     <>
       <div className='container'>
         <div className='text-container'>
-        <button disabled={loading} onClick={clickHandler}> Display Materials </button>
+        <button disabled={loading} onClick={clickHandler}> Display Inventory </button>
         <ul>
           {materialsList}
         </ul>
