@@ -1,6 +1,6 @@
 import './Materials.css';
 import Material from '../Material/Material'
-import React, { useState }from 'react';
+import React, { useState } from 'react';
 
 const Materials: React.FC = () => {
   const [materials, setMaterials] = useState([])
@@ -8,7 +8,7 @@ const Materials: React.FC = () => {
 
   const clickHandler = () => {
     setLoading(true);
-    fetch('https://craft-purse-backend.vercel.app/')
+    fetch(import.meta.env.VITE_BACKEND_URL)
       .then(response => response.json())
       .then(data => setMaterials(data))
       .then(() => setLoading(false))
