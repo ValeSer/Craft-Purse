@@ -1,4 +1,8 @@
-import './Materials.css';
+//import './Materials.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Button } from 'react-bootstrap';
 import Material from '../Material/Material'
 import React, { useState } from 'react';
 
@@ -17,22 +21,30 @@ const Materials: React.FC = () => {
  
   const materialsList = materials.map((material) => {
     return (
-      <Material 
-      key={material['_id']}
-      name={material['name'] + ': '}
-      quantityLeft={material['quantityLeft']}
-      ></Material>)
+      <>
+        <Row>
+          <Col>
+            <Material 
+            key={material['_id']}
+            name={material['name'] + ': '}
+            quantityLeft={material['quantityLeft']}
+            ></Material>
+          </Col>
+        </Row>
+        
+      </>
+    )
   })
+
   return (
     <>
-      <div className='container'>
-        <div className='text-container'>
-        <button disabled={loading} onClick={clickHandler}> Display Inventory </button>
-        <ul>
+      
+     
+        <Button disabled={loading} onClick={clickHandler}> Display Inventory </Button>
+        <Container>
           {materialsList}
-        </ul>
-        </div>
-      </div>
+        </Container>
+        
     </>
   )
 }
