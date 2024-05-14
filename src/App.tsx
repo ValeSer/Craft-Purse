@@ -1,4 +1,5 @@
 import './App.css'
+import AddMaterialForm from './components/AddMaterialForm/AddMaterialForm'
 import Materials from './components/Materials/Materials'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
       <Materials/>
+      <AddMaterialForm/>
     </>
   )
 }
