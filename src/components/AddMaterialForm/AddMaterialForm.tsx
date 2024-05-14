@@ -6,10 +6,18 @@ function AddMaterialForm() {
     <>
       <FloatingLabel
         controlId="floatingInput"
-        label="Material name"
+        label="name"
         className="mb-3"
       >
-        <Form.Control type="text" placeholder="Material-Name" />
+        <Form.Control type="text" placeholder="Name" />
+      </FloatingLabel>
+
+      <FloatingLabel
+        controlId="floatingInput"
+        label="quantity"
+        className="mb-3"
+      >
+        <Form.Control type="number" placeholder="Quantity" />
       </FloatingLabel>
       
     </>
