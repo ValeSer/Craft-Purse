@@ -22,13 +22,6 @@ function AddMaterialForm() {
     console.log(formValues)
   };
 
-  
-  const newFormData = () => {
-    const formData = new FormData();
-    formData.append("name", formValues.name);
-    formData.append("quantityLeft", formValues.quantityLeft);
-    return formData;
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,8 +30,11 @@ function AddMaterialForm() {
       // API call
       const response = await fetch("http://localhost:3000/material", {
         method: "POST",
-        credentials: "include",
-        body: newFormData(),
+        // credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: formValues.name, quantityLeft: formValues.quantityLeft }),
       });
       if (response.ok) {
         console.log('submitted,ok');
@@ -47,6 +43,9 @@ function AddMaterialForm() {
       }
     } catch (error) {
       console.error("An error occurred:", error);
+    }
+    finally {
+      setLoading(false)
     }
   };
 
