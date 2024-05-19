@@ -11,14 +11,18 @@ const Materials: React.FC = () => {
   const [loading, setLoading] = useState(false)
   const [displayList, setDisplayList] = useState(false)
 
+  const loadList = () => {
+    setLoading(true);
+    fetch(import.meta.env.VITE_BACKEND_URL)
+      .then(response => response.json())
+      .then(data => setMaterials(data))
+      .then(() => setLoading(false))
+      .catch(error => { console.log(error) });
+  }
+
   const clickHandler = () => {
     if(!displayList){
-      setLoading(true);
-      fetch(import.meta.env.VITE_BACKEND_URL)
-        .then(response => response.json())
-        .then(data => setMaterials(data))
-        .then(() => setLoading(false))
-        .catch(error => { console.log(error) });
+      loadList()
       setDisplayList(true)
     } else {
       setDisplayList(false)
