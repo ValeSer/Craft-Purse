@@ -22,6 +22,7 @@ const Materials: React.FC = () => {
       setDisplayList(true)
     } else {
       setDisplayList(false)
+      setMaterials([])
     }
 
   }
@@ -32,9 +33,9 @@ const Materials: React.FC = () => {
         <Row>
           <Col>
             <Material 
-            key={material['_id']}
-            name={material['name'] + ': '}
-            quantityLeft={material['quantityLeft']}
+              key={material['_id']}
+              name={material['name'] + ': '}
+              quantityLeft={material['quantityLeft']}
             ></Material>
           </Col>
         </Row>
