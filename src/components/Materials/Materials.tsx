@@ -9,14 +9,21 @@ import React, { useState } from 'react';
 const Materials: React.FC = () => {
   const [materials, setMaterials] = useState([])
   const [loading, setLoading] = useState(false)
+  const [displayList, setDisplayList] = useState(false)
 
   const clickHandler = () => {
-    setLoading(true);
-    fetch(import.meta.env.VITE_BACKEND_URL)
-      .then(response => response.json())
-      .then(data => setMaterials(data))
-      .then(() => setLoading(false))
-      .catch(error => { console.log(error) });
+    if(!displayList){
+      setLoading(true);
+      fetch(import.meta.env.VITE_BACKEND_URL)
+        .then(response => response.json())
+        .then(data => setMaterials(data))
+        .then(() => setLoading(false))
+        .catch(error => { console.log(error) });
+      setDisplayList(true)
+    } else {
+      setDisplayList(false)
+    }
+
   }
  
   const materialsList = materials.map((material) => {
@@ -38,13 +45,10 @@ const Materials: React.FC = () => {
 
   return (
     <>
-      
-     
-        <Button disabled={loading} onClick={clickHandler}> Display Inventory </Button>
+        <Button disabled={loading} onClick={clickHandler}> {displayList ? 'Hide ': 'Display ' } Inventory </Button>
         <Container>
           {materialsList}
         </Container>
-        
     </>
   )
 }
