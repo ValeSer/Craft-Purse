@@ -28,7 +28,7 @@ function AddMaterialForm() {
     setLoading(true);
     try {
       // API call
-      const response = await fetch("http://localhost:3000/material", {
+      const response = await fetch(import.meta.env.VITE_BACKEND_URL+ "/material", {
         method: "POST",
         // credentials: "include",
         headers: {
