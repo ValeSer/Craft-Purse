@@ -38,6 +38,7 @@ const Materials: React.FC = () => {
           <Col>
             <Material 
               key={material['_id']}
+              _id={material['_id']}
               name={material['name'] + ': '}
               quantityLeft={material['quantityLeft']}
             ></Material>
