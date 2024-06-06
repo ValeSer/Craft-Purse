@@ -16,9 +16,9 @@ const Material = (props: MaterialProps) => {
 
   return (
     <>
-    <li>{props.name} {props.quantityLeft}
+    <div>{props.name} {props.quantityLeft}
       <button onClick={onDelete}>Delete</button>
-    </li>
+    </div>
     </>
   )
 }
