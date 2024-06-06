@@ -1,3 +1,5 @@
+import './Material.css'
+
 interface MaterialProps {
   _id: string;
   name: string;
@@ -16,8 +18,10 @@ const Material = (props: MaterialProps) => {
 
   return (
     <>
-    <div>{props.name} {props.quantityLeft}
-      <button onClick={onDelete}>Delete</button>
+    <div>
+      <span className='name'>{props.name}</span>
+      <span className='quantity'>{props.quantityLeft}</span>
+      <button className='delete-button'onClick={onDelete}>Delete</button>
     </div>
     </>
   )
