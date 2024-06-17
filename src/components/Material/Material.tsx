@@ -18,9 +18,9 @@ const Material = (props: MaterialProps) => {
 
   return (
     <>
-    <div>
-      <span className='name'>{props.name}</span>
-      <span className='quantity'>{props.quantityLeft}</span>
+    <div className='row-material'>
+      <div className='name'>{props.name.slice(0,1).toUpperCase()+props.name.slice(1)}</div>
+      <div className='quantity'>{props.quantityLeft}</div>
       <button className='delete-button'onClick={onDelete}>Delete</button>
     </div>
     </>
