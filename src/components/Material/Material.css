@@ -1,3 +1,15 @@
 .name {
-  color: darkgreen
+  color: darkgreen;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.row-material {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+
+.quantity {
+  padding-right: 2rem;
 }
