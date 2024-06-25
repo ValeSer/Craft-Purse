@@ -6,7 +6,7 @@ interface MaterialProps {
   _id: string;
   name: string;
   quantityLeft: number;
-
+  onUpdate: () => void;
 }
 
 const Material = (props: MaterialProps) => {
@@ -23,8 +23,6 @@ const Material = (props: MaterialProps) => {
     setIsEditing(!isEditing)
   }
 
-
-
   return (
     <>
     {!isEditing && (<div className='row-material'>
@@ -38,6 +36,7 @@ const Material = (props: MaterialProps) => {
         name={props.name} 
         quantityLeft={props.quantityLeft}
         onCancel={editToggle}
+        onUpdate={props.onUpdate}
         >
       </EditMaterial>)}
     </>

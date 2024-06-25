@@ -30,7 +30,7 @@ const Materials: React.FC = () => {
     }
 
   }
- 
+
   const materialsList = materials.map((material) => {
     return (
       <>
@@ -41,6 +41,7 @@ const Materials: React.FC = () => {
               _id={material['_id']}
               name={material['name']}
               quantityLeft={material['quantityLeft']}
+              onUpdate={loadList}
             ></Material>
           </Col>
         </Row>
